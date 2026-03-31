@@ -1,0 +1,177 @@
+{
+  "surface_variables": {
+    "msl": {
+      "era5_name": "mean_sea_level_pressure",
+      "attributes": {
+        "description": "Sea-Level Pressure",
+        "standard_name": "air_pressure_at_sea_level",
+        "long_name": "Sea-Level Pressure",
+        "units": "Pa"
+      }
+    },
+    "sp": {
+      "era5_name": "surface_pressure",
+      "attributes": {
+        "description": "Pressure at the Surface",
+        "standard_name": "surface_air_pressure",
+        "long_name": "Pressure at the Surface",
+        "units": "Pa"
+      }
+    },
+    "d2m": {
+      "era5_name": "2m_dewpoint_temperature",
+      "attributes": {
+        "description": "Dewpoint Temperature at 2 m",
+        "standard_name": "dew_point_temperature",
+        "long_name": "Dewpoint Temperature at 2 m",
+        "units": "K"
+      }
+    },
+    "2t": {
+      "era5_name": "2m_temperature",
+      "attributes": {
+        "description": "Temperature at 2 m",
+        "standard_name": "air_temperature",
+        "long_name": "Temperature at 2 m",
+        "units": "K"
+      }
+    },
+    "t_sfc": {
+      "era5_name": "skin_temperature",
+      "attributes": {
+        "description": "Temperature at the Surface",
+        "standard_name": "surface_temperature",
+        "long_name": "Temperature at the Surface",
+        "units": "K"
+      }
+    },
+    "iwv": {
+      "era5_name": "total_column_water_vapour",
+      "attributes": {
+        "description": "Integrated Water Vapor",
+        "standard_name": "integrated_water_vapor",
+        "long_name": "Integrated Water Vapor",
+        "units": "kg m-2"
+      }
+    },
+    "ivt_u": {
+      "era5_name": "vertical_integral_of_eastward_water_vapour_flux",
+      "attributes": {
+        "description": "Integrated Vapor Transport Zonal",
+        "standard_name": "integrated_vapor_transport_zonal",
+        "long_name": "Integrated Vapor Transport Zonal",
+        "units": "kg m-1 s-1"
+      }
+    },
+    "ivt_v": {
+      "era5_name": "vertical_integral_of_northward_water_vapour_flux",
+      "attributes": {
+        "description": "Integrated Vapor Transport Meridional",
+        "standard_name": "integrated_vapor_transport_meridional",
+        "long_name": "Integrated Vapor Transport Meridional",
+        "units": "kg m-1 s-1"
+      }
+    },
+    "10u": {
+      "era5_name": "10m_u_component_of_wind",
+      "attributes": {
+        "description": "u-Component of Wind at 10 m (grid)",
+        "standard_name": "eastward_wind",
+        "long_name": "u-Component of Wind at 10 m (grid)",
+        "units": "m s-1"
+      }
+    },
+    "10v": {
+      "era5_name": "10m_v_component_of_wind",
+      "attributes": {
+        "description": "v-Component of Wind at 10 m (grid)",
+        "standard_name": "northward_wind",
+        "long_name": "v-Component of Wind at 10 m (grid)",
+        "units": "m s-1"
+      }
+    },
+    "tp": {
+      "era5_name": "total_precipitation",
+      "attributes": {
+        "standard_name": "precipitation_amount_6_hours",
+        "long_name": "Accumulated Precipitation Over Past 6 Hours",
+        "units": "mm"
+      }
+    },
+    "z_sfc": {
+      "era5_name": "geopotential_at_surface",
+      "attributes": {
+        "description": "Geopotential at surface",
+        "standard_name": "geopotential_at_surface",
+        "long_name": "Geopotential at surface",
+        "units": "m2 s-2"
+      }
+    },
+    "lsm": {
+      "era5_name": "land_sea_mask",
+      "attributes": {
+        "description": "Land Mask",
+        "standard_name": "land_mask",
+        "long_name": "Land Mask",
+        "notes": "1=land, 0=water",
+        "units": ""
+      }
+    },
+    "tisr": {
+      "era5_name": "toa_incident_solar_radiation",
+      "attributes": {
+        "description": "TOA incident short-wave (solar) radiation",
+        "standard_name": "unknown",
+        "long_name": "TOA incident short-wave (solar) radiation",
+        "units": "J m**-2"
+      }
+    }
+  },
+  "pressure_variables": {
+    "z": {
+      "era5_name": "geopotential",
+      "attributes": {
+        "description": "Geopotential Height",
+        "standard_name": "geopotential_height",
+        "long_name": "Geopotential Height",
+        "units": "m2 s-2"
+      }
+    },
+    "t": {
+      "era5_name": "temperature",
+      "attributes": {
+        "description": "Temperature",
+        "standard_name": "air_temperature",
+        "long_name": "Temperature",
+        "units": "K"
+      }
+    },
+    "q": {
+      "era5_name": "specific_humidity",
+      "attributes": {
+        "description": "Specific Humidity",
+        "standard_name": "specific_humidity",
+        "long_name": "Specific Humidity",
+        "units": "kg kg-1"
+      }
+    },
+    "u": {
+      "era5_name": "u_component_of_wind",
+      "attributes": {
+        "description": "u-Component of Wind (Earth)",
+        "standard_name": "eastward_wind",
+        "long_name": "u-Component of Wind (Earth)",
+        "units": "m s-1"
+      }
+    },
+    "v": {
+      "era5_name": "v_component_of_wind",
+      "attributes": {
+        "description": "v-Component of Wind (Earth)",
+        "standard_name": "northward_wind",
+        "long_name": "v-Component of Wind (Earth)",
+        "units": "m s-1"
+      }
+    }
+  }
+}
