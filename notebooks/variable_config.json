@@ -37,7 +37,7 @@
       }
     },
     "t_sfc": {
-      "era5_name": "skin_temperature",
+      "era5_names": ["skin_temperature", "sea_surface_temperature"],
       "attributes": {
         "description": "Temperature at the Surface",
         "standard_name": "surface_temperature",
