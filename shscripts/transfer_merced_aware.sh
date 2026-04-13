@@ -84,13 +84,16 @@ for YEAR in {2012..2020}; do
             echo "--- Starting Python processing ---"
             # Pass BOTH destination paths to your Python script so it can process them together
             # python3 /path/to/your/processing_script.py \
+                # --year "$YEAR" \
+                # --month "$MONTH" \
             #    --model_dir "$DEST_MODEL" \
             #    --single_dir "$DEST_SINGLE"
+
             
             echo "--- Cleaning up raw files on Merced ---"
             # Delete both source paths on Merced permanently
-            # globus delete "$MERCED_ENDPOINT_ID:$SOURCE_MODEL" --recursive
-            # globus delete "$MERCED_ENDPOINT_ID:$SOURCE_SINGLE" --recursive
+            # globus delete "$MERCED_ENDPOINT_ID:$DEST_MODEL" --recursive
+            # globus delete "$MERCED_ENDPOINT_ID:$DEST_SINGLE" --recursive
             
             echo "Workflow for ${YEAR}/${MONTH} fully complete."
         else
