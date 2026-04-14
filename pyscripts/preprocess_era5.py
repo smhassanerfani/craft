@@ -99,7 +99,7 @@ if __name__ == "__main__":
 
         # 3. Load variable configuration and build lists ONCE
         print("Loading configuration...")
-        with open('../notebooks/variable_config.json', 'r') as f:
+        with open('../notebooks/variable_config_era5.json', 'r') as f:
             config = json.load(f)
 
         selected_vars = []
