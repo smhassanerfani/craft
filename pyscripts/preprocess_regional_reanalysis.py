@@ -1,4 +1,5 @@
 import os
+import json
 import glob
 import calendar
 import warnings
@@ -13,14 +14,21 @@ DIR_OUT_BASE = '/cw3e/mead/projects/cwp167/moerfani_data/regional'
 
 VERTICAL_INDICES = [78, 69, 63, 58, 55, 51, 45, 40, 37, 35, 32, 29, 26, 23, 19, 15, 12, 10, 2]
 
-PRESSURE_VARS = ['Z_e', 'T_e', 'q_e', 'u_gr_e', 'v_gr_e']
+with open('../notebooks/variable_config_wwrf.json', 'r') as f:
+    config = json.load(f)
 
-SINGLE_VARS = [
-    'slp', 'p_sfc', 'Td_2m', 'T_2m', 'T_sfc',
-    'IWV', 'IVTV', 'IVTU', 'u_10m_gr', 'v_10m_gr',
-    'precip_bkt', 'Z_sfc', 'LandMask'
-]
+PRESSURE_VARS = []
+SINGLE_VARS = []
+RENAME_MAP = {}
 
+for short, info in config['surface_variables'].items():
+
+    SINGLE_VARS.append(info['wwrf_name'])
+    RENAME_MAP[info['wwrf_name']] = short
+
+for short, info in config['pressure_variables'].items():
+    PRESSURE_VARS.append(info['wwrf_name'])
+    RENAME_MAP[info['wwrf_name']] = short
 
 def main(year, month, dest_model, dest_single):
     # --- Start Dask Cluster ---

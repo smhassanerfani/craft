@@ -1,0 +1,168 @@
+{
+  "surface_variables": {
+    "msl": {
+      "wwrf_name": "slp",
+      "attributes": {
+        "description": "Sea-Level Pressure",
+        "standard_name": "air_pressure_at_sea_level",
+        "long_name": "Sea-Level Pressure",
+        "units": "Pa"
+      }
+    },
+    "sp": {
+      "wwrf_name": "p_sfc",
+      "attributes": {
+        "description": "Pressure at the Surface",
+        "standard_name": "surface_air_pressure",
+        "long_name": "Pressure at the Surface",
+        "units": "Pa"
+      }
+    },
+    "d2m": {
+      "wwrf_name": "Td_2m",
+      "attributes": {
+        "description": "Dewpoint Temperature at 2 m",
+        "standard_name": "dew_point_temperature",
+        "long_name": "Dewpoint Temperature at 2 m",
+        "units": "K"
+      }
+    },
+    "2t": {
+      "wwrf_name": "T_2m",
+      "attributes": {
+        "description": "Temperature at 2 m",
+        "standard_name": "air_temperature",
+        "long_name": "Temperature at 2 m",
+        "units": "K"
+      }
+    },
+    "t_sfc": {
+      "wwrf_name": "T_sfc",
+      "attributes": {
+        "description": "Temperature at the Surface",
+        "standard_name": "surface_temperature",
+        "long_name": "Temperature at the Surface",
+        "units": "K"
+      }
+    },
+    "iwv": {
+      "wwrf_name": "IWV",
+      "attributes": {
+        "description": "Integrated Water Vapor",
+        "standard_name": "integrated_water_vapor",
+        "long_name": "Integrated Water Vapor",
+        "units": "kg m-2"
+      }
+    },
+    "ivt_u": {
+      "wwrf_name": "IVTU",
+      "attributes": {
+        "description": "Integrated Vapor Transport Zonal",
+        "standard_name": "integrated_vapor_transport_zonal",
+        "long_name": "Integrated Vapor Transport Zonal",
+        "units": "kg m-1 s-1"
+      }
+    },
+    "ivt_v": {
+      "wwrf_name": "IVTV",
+      "attributes": {
+        "description": "Integrated Vapor Transport Meridional",
+        "standard_name": "integrated_vapor_transport_meridional",
+        "long_name": "Integrated Vapor Transport Meridional",
+        "units": "kg m-1 s-1"
+      }
+    },
+    "10u": {
+      "wwrf_name": "u_10m_gr",
+      "attributes": {
+        "description": "u-Component of Wind at 10 m (grid)",
+        "standard_name": "eastward_wind",
+        "long_name": "u-Component of Wind at 10 m (grid)",
+        "units": "m s-1"
+      }
+    },
+    "10v": {
+      "wwrf_name": "v_10m_gr",
+      "attributes": {
+        "description": "v-Component of Wind at 10 m (grid)",
+        "standard_name": "northward_wind",
+        "long_name": "v-Component of Wind at 10 m (grid)",
+        "units": "m s-1"
+      }
+    },
+    "tp": {
+      "wwrf_name": "precip_bkt",
+      "attributes": {
+        "standard_name": "precipitation_amount_6_hours",
+        "long_name": "Accumulated Precipitation Over Past 6 Hours",
+        "units": "mm"
+      }
+    },
+    "z_sfc": {
+      "wwrf_name": "Z_sfc",
+      "attributes": {
+        "description": "Geopotential at surface",
+        "standard_name": "geopotential_at_surface",
+        "long_name": "Geopotential at surface",
+        "units": "m2 s-2"
+      }
+    },
+    "lsm": {
+      "wwrf_name": "LandMask",
+      "attributes": {
+        "description": "Land Mask",
+        "standard_name": "land_mask",
+        "long_name": "Land Mask",
+        "notes": "1=land, 0=water",
+        "units": ""
+      }
+    }
+  },
+  "pressure_variables": {
+    "z": {
+      "wwrf_name": "Z_e",
+      "attributes": {
+        "description": "Geopotential Height",
+        "standard_name": "geopotential_height",
+        "long_name": "Geopotential Height",
+        "units": "m2 s-2"
+      }
+    },
+    "t": {
+      "wwrf_name": "T_e",
+      "attributes": {
+        "description": "Temperature",
+        "standard_name": "air_temperature",
+        "long_name": "Temperature",
+        "units": "K"
+      }
+    },
+    "q": {
+      "wwrf_name": "q_e",
+      "attributes": {
+        "description": "Specific Humidity",
+        "standard_name": "specific_humidity",
+        "long_name": "Specific Humidity",
+        "units": "kg kg-1"
+      }
+    },
+    "u": {
+      "wwrf_name": "u_gr_e",
+      "attributes": {
+        "description": "u-Component of Wind (Earth)",
+        "standard_name": "eastward_wind",
+        "long_name": "u-Component of Wind (Earth)",
+        "units": "m s-1"
+      }
+    },
+    "v": {
+      "wwrf_name": "v_gr_e",
+      "attributes": {
+        "description": "v-Component of Wind (Earth)",
+        "standard_name": "northward_wind",
+        "long_name": "v-Component of Wind (Earth)",
+        "units": "m s-1"
+      }
+    }
+  }
+}
