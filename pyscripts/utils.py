@@ -41,7 +41,7 @@ class LoggerDecorator(object):
             compiling_time = str(datetime.timedelta(seconds=toc))
             
             # Clean log message
-            logger.info(f"Task: {func.__name__} | Year: {year} | Month: {month} | Duration: {compiling_time}")
+            logger.info(f"Task: {func.__name__} | Year: {year} | Month: {month:2d} | Duration: {compiling_time}")
 
             logger.removeHandler(handler)
             handler.close() # Important to close the file handle
