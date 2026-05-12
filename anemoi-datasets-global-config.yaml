@@ -1,20 +1,108 @@
 dates:
   start: 1979-01-01T00:00:00
-  end: 1979-12-31T18:00:00
+  end: 2023-05-31T18:00:00
   frequency: 6h
 
 statistics:
   start: 1979
-  end: 1979
+  end: 2019
 
 input:
   join:
     - xarray-zarr:
-        url: /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1979.zarr
+        url: [/cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1979.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1980.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1981.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1982.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1983.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1984.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1985.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1986.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1987.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1988.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1989.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1990.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1991.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1992.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1993.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1994.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1995.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1996.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1997.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1998.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1999.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2000.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2001.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2002.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2003.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2004.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2005.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2006.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2007.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2008.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2009.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2010.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2011.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2012.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2013.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2014.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2015.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2016.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2017.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2018.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2019.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2020.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2021.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2022.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2023.zarr]
         variable: [u, v, t, q, z]
         level: [50, 100, 150, 200, 250, 300, 400, 500, 550, 600, 650, 700, 750, 800, 850, 900, 925, 950, 1000]
     - xarray-zarr:
-        url: /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1979.zarr
+        url: [/cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1979.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1980.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1981.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1982.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1983.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1984.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1985.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1986.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1987.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1988.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1989.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1990.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1991.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1992.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1993.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1994.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1995.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1996.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1997.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1998.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/1999.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2000.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2001.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2002.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2003.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2004.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2005.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2006.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2007.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2008.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2009.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2010.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2011.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2012.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2013.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2014.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2015.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2016.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2017.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2018.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2019.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2020.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2021.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2022.zarr,
+              /cw3e/mead/projects/cwp167/moerfani_data/global-intermediate-zarr/2023.zarr]
         variable: [msl, sp, d2m, 2t, iwv, ivt_u, ivt_v, 10u, 10v, z_sfc, t_sfc, lsm, tp]
     - forcings:
         template: ${input.join.0.xarray-zarr}
