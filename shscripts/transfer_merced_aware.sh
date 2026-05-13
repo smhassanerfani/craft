@@ -39,14 +39,16 @@ for YEAR in {2012..2020}; do
                 DEST_PATH="$DEST_SINGLE"
             fi
 
-            # Check if the data already exists to avoid re-downloading
-            if [ -d "$DEST_PATH" ] && [ "$(ls -A "$DEST_PATH" 2>/dev/null)" ]; then
-                echo "Directory $DEST_PATH already exists and contains files. Skipping download for $DATATYPE."
-                continue 
+            LOCAL_DEST_PATH="/cw3e${DEST_PATH}"   # filesystem path for checks and Python
+
+            # Check against the real filesystem path
+            if [ -d "$LOCAL_DEST_PATH" ] && [ "$(ls -A "$LOCAL_DEST_PATH" 2>/dev/null)" ]; then
+                echo "Directory $LOCAL_DEST_PATH already exists and contains files. Skipping download for $DATATYPE."
+                continue
             fi
 
             echo "Creating directory: $DEST_PATH"
-            mkdir -p "$DEST_PATH"
+            # mkdir -p "$DEST_PATH" --- IGNORE ---
 
             echo "Initiating Transfer from Merced to AWARE ($DATATYPE)..."
             TASK_ID=$(globus transfer "$MERCED_ENDPOINT_ID:$SOURCE_PATH" "$AWARE_ENDPOINT_ID:$DEST_PATH" \
@@ -83,17 +85,17 @@ for YEAR in {2012..2020}; do
             
             echo "--- Starting Python processing ---"
             # Pass BOTH destination paths to your Python script so it can process them together
-            # python3 /path/to/your/processing_script.py \
-                # --year "$YEAR" \
-                # --month "$MONTH" \
-            #    --model_dir "$DEST_MODEL" \
-            #    --single_dir "$DEST_SINGLE"
-
+            python3 /home/moerfani/projects/craft/pyscripts/preprocess_regional_reanalysis.py \
+                --year "$YEAR" \
+                --month "$MONTH" \
+                --model_dir "/cw3e${DEST_MODEL}" \
+                --single_dir "/cw3e${DEST_SINGLE}" || { echo "Python failed for ${YEAR}/${MONTH}"; continue; }
             
-            echo "--- Cleaning up raw files on Merced ---"
-            # Delete both source paths on Merced permanently
-            # globus delete "$MERCED_ENDPOINT_ID:$DEST_MODEL" --recursive
-            # globus delete "$MERCED_ENDPOINT_ID:$DEST_SINGLE" --recursive
+            echo "--- Cleaning up raw files on Aware ---"
+            # Delete both source paths on Aware permanently
+            # globus delete "$AWARE_ENDPOINT_ID:$DEST_MODEL"  --recursive --yes
+            # globus delete "$AWARE_ENDPOINT_ID:$DEST_SINGLE" --recursive --yes
+            rm -rf "/cw3e${DEST_MODEL}" "/cw3e${DEST_SINGLE}"
             
             echo "Workflow for ${YEAR}/${MONTH} fully complete."
         else
