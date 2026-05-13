@@ -15,7 +15,11 @@ DIR_OUT_BASE = '/cw3e/mead/projects/cwp167/moerfani_data/regional'
 
 VERTICAL_INDICES = [78, 69, 63, 58, 55, 51, 45, 40, 37, 35, 32, 29, 26, 23, 19, 15, 12, 10, 2]
 
-with open('../notebooks/variable_config_wwrf.json', 'r') as f:
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+CONFIG_PATH = os.path.join(SCRIPT_DIR, '..', 'notebooks', 'variable_config_wwrf.json')
+SINCOS_PATH = os.path.join(SCRIPT_DIR, '..', 'notebooks', 'sincos.nc')
+
+with open(CONFIG_PATH, 'r') as f:
     config = json.load(f)
 
 PRESSURE_VARS = []
@@ -30,7 +34,7 @@ for short, info in config['pressure_variables'].items():
     PRESSURE_VARS.append(info['wwrf_name'])
     RENAME_MAP[info['wwrf_name']] = short
 
-SINCOS = xr.open_dataset('../notebooks/sincos.nc', chunks='auto')
+SINCOS = xr.open_dataset(SINCOS_PATH, chunks='auto')
 BDY = 5
 
 # --- Load sin/cos once into numpy arrays (avoids recompute each day) ---
@@ -77,18 +81,18 @@ def process_day(date_str, dest_model, dest_single, dir_out):
         )
 
         # Rotate wind components using pre-loaded numpy arrays
-        for u_key, v_key in WIND_PAIRS:
-            u = ds_resampled[u_key]
-            v = ds_resampled[v_key]
-            ds_resampled[u_key] = u * COS_ALPHA - v * SIN_ALPHA
-            ds_resampled[v_key] = v * COS_ALPHA + u * SIN_ALPHA
+        # for u_key, v_key in WIND_PAIRS:
+        #     u = ds_resampled[u_key]
+        #     v = ds_resampled[v_key]
+        #     ds_resampled[u_key] = u * COS_ALPHA - v * SIN_ALPHA
+        #     ds_resampled[v_key] = v * COS_ALPHA + u * SIN_ALPHA
 
         # Build encoding: chunk time=4 (all steps), full size on other dims
         encoding = {
             var: {
                 'chunksizes': (1, *ds_resampled[var].shape[1:]),
-                'zlib': True,
-                'complevel': 1,
+                # 'zlib': True,
+                # 'complevel': 1,
             }
             for var in ds_resampled.data_vars
             if 'time' in ds_resampled[var].dims
@@ -100,7 +104,7 @@ def process_day(date_str, dest_model, dest_single, dir_out):
 
 def main(year, month, dest_model, dest_single):
     # --- Tuned Dask Cluster ---
-    cluster = LocalCluster(n_workers=8, threads_per_worker=2, memory_limit='16GB')
+    cluster = LocalCluster(n_workers=16, threads_per_worker=4)
     client = Client(cluster)
     print(f"Dask Dashboard: {client.dashboard_link}")
 
