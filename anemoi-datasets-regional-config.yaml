@@ -1,0 +1,39 @@
+dates:
+  start: 2012-09-01T00:00:00
+  end: 2023-04-25T00:00:00
+  frequency: 6h
+
+statistics:
+  start: 2012-09-01T00:00:00
+  end: 2020-06-01T00:00:00
+
+input:
+  join:
+    - netcdf: 
+        # For this test, point directly to the specific file instead of the *.nc wildcard
+        path: [/cw3e/mead/projects/cwp167/moerfani_data/regional/2012/*.nc,
+               /cw3e/mead/projects/cwp167/moerfani_data/regional/2013/*.nc,
+               /cw3e/mead/projects/cwp167/moerfani_data/regional/2014/*.nc,
+               /cw3e/mead/projects/cwp167/moerfani_data/regional/2015/*.nc,
+               /cw3e/mead/projects/cwp167/moerfani_data/regional/2016/*.nc,
+               /cw3e/mead/projects/cwp167/moerfani_data/regional/2017/*.nc,
+               /cw3e/mead/projects/cwp167/moerfani_data/regional/2018/*.nc,
+               /cw3e/mead/projects/cwp167/moerfani_data/regional/2019/*.nc,
+               /cw3e/mead/projects/cwp167/moerfani_data/regional/2020/*.nc,
+               /cw3e/mead/projects/cwp167/moerfani_data/regional/2021/*.nc,
+               /cw3e/mead/projects/cwp167/moerfani_data/regional/2022/*.nc,
+               /cw3e/mead/projects/cwp167/moerfani_data/regional/2023/*.nc]
+        variable: [10u, 10v, 2t, d2m, ivt_u, ivt_v, iwv, lsm, msl, q, sp, t, t_sfc, tp, u, v, z, z_sfc]
+    
+    - forcings:
+        template: ${input.join.0.netcdf}
+        param:
+          - insolation
+          - cos_julian_day
+          - cos_local_time
+          - cos_longitude
+          - cos_latitude
+          - sin_julian_day
+          - sin_local_time
+          - sin_longitude
+          - sin_latitude
