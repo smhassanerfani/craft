@@ -1,6 +1,7 @@
 dates:
   start: 2012-09-01T00:00:00
-  end: 2023-04-25T00:00:00
+  # end: 2023-04-25T00:00:00
+  end: 2022-12-31T18:00:00
   frequency: 6h
 
 statistics:
@@ -10,21 +11,20 @@ statistics:
 input:
   join:
     - netcdf: 
-        # For this test, point directly to the specific file instead of the *.nc wildcard
-        path: [/cw3e/mead/projects/cwp167/moerfani_data/regional/2012/*.nc,
-               /cw3e/mead/projects/cwp167/moerfani_data/regional/2013/*.nc,
-               /cw3e/mead/projects/cwp167/moerfani_data/regional/2014/*.nc,
-               /cw3e/mead/projects/cwp167/moerfani_data/regional/2015/*.nc,
-               /cw3e/mead/projects/cwp167/moerfani_data/regional/2016/*.nc,
-               /cw3e/mead/projects/cwp167/moerfani_data/regional/2017/*.nc,
-               /cw3e/mead/projects/cwp167/moerfani_data/regional/2018/*.nc,
-               /cw3e/mead/projects/cwp167/moerfani_data/regional/2019/*.nc,
-               /cw3e/mead/projects/cwp167/moerfani_data/regional/2020/*.nc,
-               /cw3e/mead/projects/cwp167/moerfani_data/regional/2021/*.nc,
-               /cw3e/mead/projects/cwp167/moerfani_data/regional/2022/*.nc,
-               /cw3e/mead/projects/cwp167/moerfani_data/regional/2023/*.nc]
+        path: 
+          - /cw3e/mead/projects/cwp167/moerfani_data/regional/2012/*.nc
+          - /cw3e/mead/projects/cwp167/moerfani_data/regional/2013/*.nc
+          - /cw3e/mead/projects/cwp167/moerfani_data/regional/2014/*.nc
+          - /cw3e/mead/projects/cwp167/moerfani_data/regional/2015/*.nc
+          - /cw3e/mead/projects/cwp167/moerfani_data/regional/2016/*.nc
+          - /cw3e/mead/projects/cwp167/moerfani_data/regional/2017/*.nc
+          - /cw3e/mead/projects/cwp167/moerfani_data/regional/2018/*.nc
+          - /cw3e/mead/projects/cwp167/moerfani_data/regional/2019/*.nc
+          - /cw3e/mead/projects/cwp167/moerfani_data/regional/2020/*.nc
+          - /cw3e/mead/projects/cwp167/moerfani_data/regional/2021/*.nc
+          - /cw3e/mead/projects/cwp167/moerfani_data/regional/2022/*.nc
         variable: [10u, 10v, 2t, d2m, ivt_u, ivt_v, iwv, lsm, msl, q, sp, t, t_sfc, tp, u, v, z, z_sfc]
-    
+        
     - forcings:
         template: ${input.join.0.netcdf}
         param:
