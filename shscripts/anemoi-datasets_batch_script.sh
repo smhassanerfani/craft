@@ -4,12 +4,13 @@
 #SBATCH --error=./error/zarr-31km_%j.error
 #SBATCH --partition=shared-192
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=8
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=8 
 #SBATCH --account=cwp167
 #SBATCH --export=ALL
 #SBATCH --array=0-19:1
 #SBATCH --mem=16Gb
-#SBATCH -t 24:00:00
+#SBATCH -t 7-00:00:00
 
 #############################################################################
 # Conda environment and working directory
@@ -29,8 +30,13 @@ echo "Part ${part} / ${num_parts}"
 # Build .zarr using anemoi-datasets: https://anemoi-datasets.readthedocs.io/en/latest/index.html
 
 # anemoi-datasets init /home/moerfani/projects/craft/anemoi-datasets-global-config.yaml craft-era5-31km.zarr --overwrite
-anemoi-datasets load craft-era5-31km.zarr --part ${part}/${num_parts}
+# anemoi-datasets load craft-era5-31km.zarr --part ${part}/${num_parts}
 # anemoi-datasets finalise craft-era5-31km.zarr # (once the N parts are completed)
 # anemoi-datasets cleanup craft-era5-31km.zarr # (to eliminate temporary files)
 # anemoi-datasets inspect craft-era5-31km.zarr
-#############################################################################
+
+# anemoi-datasets init /home/moerfani/projects/craft/anemoi-datasets-regional-config.yaml craft-wwrf-6km.zarr --overwrite
+anemoi-datasets load craft-wwrf-6km.zarr --part ${part}/${num_parts}
+# anemoi-datasets finalise craft-wwrf-6km.zarr # (once the N parts are completed)
+# anemoi-datasets cleanup craft-wwrf-6km.zarr # (to eliminate temporary files)
+# anemoi-datasets inspect craft-wwrf-6km.zarr
