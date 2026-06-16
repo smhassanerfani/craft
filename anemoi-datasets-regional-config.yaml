@@ -11,20 +11,20 @@ input:
   join:
     - netcdf: 
         path: 
-          - /cw3e/mead/projects/cwp167/moerfani_data/regional/2012/wwrf_reanalysis_d01_2012-09-*.nc
-          - /cw3e/mead/projects/cwp167/moerfani_data/regional/2012/wwrf_reanalysis_d01_2012-10-*.nc
-          - /cw3e/mead/projects/cwp167/moerfani_data/regional/2012/wwrf_reanalysis_d01_2012-11-*.nc
-          - /cw3e/mead/projects/cwp167/moerfani_data/regional/2012/wwrf_reanalysis_d01_2012-12-*.nc
-          - /cw3e/mead/projects/cwp167/moerfani_data/regional/2013/*.nc
-          - /cw3e/mead/projects/cwp167/moerfani_data/regional/2014/*.nc
-          - /cw3e/mead/projects/cwp167/moerfani_data/regional/2015/*.nc
-          - /cw3e/mead/projects/cwp167/moerfani_data/regional/2016/*.nc
-          - /cw3e/mead/projects/cwp167/moerfani_data/regional/2017/*.nc
-          - /cw3e/mead/projects/cwp167/moerfani_data/regional/2018/*.nc
-          - /cw3e/mead/projects/cwp167/moerfani_data/regional/2019/*.nc
-          - /cw3e/mead/projects/cwp167/moerfani_data/regional/2020/*.nc
-          - /cw3e/mead/projects/cwp167/moerfani_data/regional/2021/*.nc
-          - /cw3e/mead/projects/cwp167/moerfani_data/regional/2022/*.nc
+          - /cw3e/mead/projects/cwp167/moerfani_data/regional_lat-lon/2012/wwrf_reanalysis_d01_2012-09.nc
+          - /cw3e/mead/projects/cwp167/moerfani_data/regional_lat-lon/2012/wwrf_reanalysis_d01_2012-10.nc
+          - /cw3e/mead/projects/cwp167/moerfani_data/regional_lat-lon/2012/wwrf_reanalysis_d01_2012-11.nc
+          - /cw3e/mead/projects/cwp167/moerfani_data/regional_lat-lon/2012/wwrf_reanalysis_d01_2012-12.nc
+          - /cw3e/mead/projects/cwp167/moerfani_data/regional_lat-lon/2013/*.nc
+          - /cw3e/mead/projects/cwp167/moerfani_data/regional_lat-lon/2014/*.nc
+          - /cw3e/mead/projects/cwp167/moerfani_data/regional_lat-lon/2015/*.nc
+          - /cw3e/mead/projects/cwp167/moerfani_data/regional_lat-lon/2016/*.nc
+          - /cw3e/mead/projects/cwp167/moerfani_data/regional_lat-lon/2017/*.nc
+          - /cw3e/mead/projects/cwp167/moerfani_data/regional_lat-lon/2018/*.nc
+          - /cw3e/mead/projects/cwp167/moerfani_data/regional_lat-lon/2019/*.nc
+          - /cw3e/mead/projects/cwp167/moerfani_data/regional_lat-lon/2020/*.nc
+          - /cw3e/mead/projects/cwp167/moerfani_data/regional_lat-lon/2021/*.nc
+          - /cw3e/mead/projects/cwp167/moerfani_data/regional_lat-lon/2022/*.nc
         variable: [10u, 10v, 2t, d2m, ivt_u, ivt_v, iwv, lsm, msl, q, sp, t, t_sfc, tp, u, v, z, z_sfc]
         
     - forcings:
